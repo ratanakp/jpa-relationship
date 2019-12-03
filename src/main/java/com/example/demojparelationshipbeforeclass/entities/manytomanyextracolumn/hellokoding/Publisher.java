@@ -16,17 +16,14 @@ public class Publisher {
     public Publisher() {
     }
 
-    public Publisher(int id, Set<BookPublisher> bookPublishers) {
-        this.id = id;
-        this.bookPublishers = bookPublishers;
+    public Publisher(String name) {
+        this.name = name;
     }
 
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
     private Set<BookPublisher> bookPublishers = new HashSet<>();
 
-    public Publisher(String name) {
-        this.name = name;
-    }
+
 
     public int getId() {
         return id;

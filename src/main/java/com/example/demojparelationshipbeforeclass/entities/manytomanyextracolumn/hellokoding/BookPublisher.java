@@ -10,6 +10,8 @@ import java.util.Objects;
 
 @Entity
 public class BookPublisher implements Serializable {
+
+
     @Id
     @ManyToOne
     @JoinColumn
@@ -30,6 +32,12 @@ public class BookPublisher implements Serializable {
     }
 
     public BookPublisher(Publisher publisher, Date publishedDate) {
+        this.publisher = publisher;
+        this.publishedDate = publishedDate;
+    }
+
+    public BookPublisher(Book book, Publisher publisher, Date publishedDate) {
+        this.book = book;
         this.publisher = publisher;
         this.publishedDate = publishedDate;
     }

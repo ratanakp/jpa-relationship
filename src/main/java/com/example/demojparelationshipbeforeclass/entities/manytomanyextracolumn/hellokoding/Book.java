@@ -25,7 +25,9 @@ public class Book {
 
     public Book(String title, BookPublisher... bookPublishers) {
         this.title = title;
-        for(BookPublisher bookPublisher : bookPublishers) bookPublisher.setBook(this);
+        for(BookPublisher bookPublisher : bookPublishers)
+            bookPublisher.setBook(this);
+
         this.bookPublishers = Stream.of(bookPublishers).collect(Collectors.toSet());
     }
 
